@@ -65,4 +65,3 @@ private $bdd = 'mysql:host=DATABASE_IP;dbname=DATABASE_NAME';
 private $user = 'USER_NAME';
 private $pass = 'USER_PASSWORD';
 ````
-

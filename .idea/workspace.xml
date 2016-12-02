@@ -67,14 +67,14 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="737">
-                <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <first_editor relative-caret-position="683">
+                <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
                 <folding>
-                  <marker date="1480682787338" expanded="true" signature="754:816" ph="CREATE USER " />
-                  <marker date="1480682787338" expanded="true" signature="855:882" ph="create datab... server_side" />
-                  <marker date="1480682787338" expanded="true" signature="931:986" ph="grant all on... " />
-                  <marker date="1480682787338" expanded="true" signature="1028:1043" ph="use server_s... " />
-                  <marker date="1480682787338" expanded="true" signature="1085:1116" ph="use source p... " />
+                  <marker date="1480698131779" expanded="true" signature="754:816" ph="CREATE USER " />
+                  <marker date="1480698131779" expanded="true" signature="855:882" ph="create datab... server_side" />
+                  <marker date="1480698131779" expanded="true" signature="931:986" ph="grant all on... " />
+                  <marker date="1480698131779" expanded="true" signature="1028:1043" ph="use server_s... " />
+                  <marker date="1480698131779" expanded="true" signature="1085:1116" ph="use source p... " />
                 </folding>
               </first_editor>
               <second_editor />
@@ -471,16 +471,16 @@
       <workItem from="1480428673297" duration="4525000" />
       <workItem from="1480599155497" duration="19000" />
       <workItem from="1480675027077" duration="14000" />
-      <workItem from="1480675673113" duration="6804000" />
+      <workItem from="1480675673113" duration="7423000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175355000" />
+    <option name="totallyTimeSpent" value="175974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -992,14 +992,14 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="737">
-            <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <first_editor relative-caret-position="683">
+            <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
             <folding>
-              <marker date="1480682787338" expanded="true" signature="754:816" ph="CREATE USER " />
-              <marker date="1480682787338" expanded="true" signature="855:882" ph="create datab... server_side" />
-              <marker date="1480682787338" expanded="true" signature="931:986" ph="grant all on... " />
-              <marker date="1480682787338" expanded="true" signature="1028:1043" ph="use server_s... " />
-              <marker date="1480682787338" expanded="true" signature="1085:1116" ph="use source p... " />
+              <marker date="1480698131779" expanded="true" signature="754:816" ph="CREATE USER " />
+              <marker date="1480698131779" expanded="true" signature="855:882" ph="create datab... server_side" />
+              <marker date="1480698131779" expanded="true" signature="931:986" ph="grant all on... " />
+              <marker date="1480698131779" expanded="true" signature="1028:1043" ph="use server_s... " />
+              <marker date="1480698131779" expanded="true" signature="1085:1116" ph="use source p... " />
             </folding>
           </first_editor>
           <second_editor />
