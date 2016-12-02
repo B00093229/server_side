@@ -70,7 +70,7 @@
         $img = $_POST["userImg"];
         $address = $_POST["userAddress"];
         $mail = $_POST["userEmail"];
-        
+
         if($bdd->updateUserProfileAdm($name, $lastName, $address, $img, $rank, $mail, $id)){
             echo "<div class='panel panel-success'> Update success ! <a href='./adminPanel.php'>Go admin panel</a></div>";
         }
