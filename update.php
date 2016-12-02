@@ -10,15 +10,18 @@
     $bdd = bdd::getBdd();
 
     if(!isset($_SESSION['user'])){
-        header('Location: index.php');
+        //header('Location: index.php');
+        echo "<script>window.location.href = './'</script>";
     }
 
     if($_SESSION['user']->RankUser != 1){
-        header('Location: index.php');
+        //header('Location: index.php');
+        echo "<script>window.location.href = './'</script>";
     }
 
     if(!isset($_GET["type"]) || !isset($_GET["id"])){
-        header('Location: index.php');
+        //header('Location: index.php');
+        echo "<script>window.location.href = './'</script>";
     }
 
     $type = $_GET["type"];
@@ -28,7 +31,6 @@
     if($type == "product"){
         $product = $bdd->getProductById($id);
         $item = $product;
-        var_dump($item);
     }
 
     echo $twig->render('update.html', array(
@@ -49,7 +51,7 @@
         }
 
         if($bdd->updateProduct($name, $price, $img, $star, $id)){
-            echo "update ok";
+            echo "<div class='panel panel-success'> Update success ! <a href='./adminPanel.php'>Go admin panel</a></div>";
         }
     }
 

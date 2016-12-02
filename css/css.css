@@ -75,6 +75,12 @@ h1, h2, h3, h4, h5, h6{
     border: solid 1px orange;
 }
 
+.panel-success{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border: #d6e9c6;
+}
+
 .img-list{
     height: 50px !important;
     width: 50px !important;
