@@ -1,0 +1,269 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m4">
+            <div class="collection">
+                <div class="collection-item"><h4>Quick nav</h4></div>
+                <form method="post">
+                    {% for param in params %}
+                        <button type="submit" name="changeParam" value="{{param}}" class="{% if curentParam == param %} active {% endif %} collection-item purple-text">
+                            {{param}}
+                            <span class="secondary-content">
+                                <i class="material-icons purple-text text-lighten-2">send</i>
+                            </span>
+                        </button>
+                    {% endfor %}
+                </form>
+            </div>
+
+            <!-- add product -->
+            {% if curentParam == 'Product' %}
+                <button data-target="modal-add-product" class="btn modal-trigger green darken-4 white-text btn-max-width">add product</button>
+
+                <!-- Modal Structure -->
+                <div id="modal-add-product" class="modal">
+                    <form method="post">
+                        <div class="modal-content">
+                            <h4>Add new product</h4>
+
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input name="productName" id="product_name" type="text" class="validate">
+                                    <label for="product_name">Product name</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <select name="productCate">
+                                        <option value="" disabled selected>Choose cate</option>
+                                        {% for cate in cates %}
+                                            <option value="{{cate.Id}}">{{cate.Name}}</option>
+                                        {% endfor %}
+
+                                    </select>
+                                    <label>Category Product</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input name="productPrice" id="product_price" type="number" class="validate">
+                                    <label for="product_price">Product price</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input name="productStar" type="checkbox" id="test5" />
+                                    <label for="test5">Is star</label>
+                                </div>
+                                <div class="input-field col s8">
+                                    <input name="productImg" id="product_img" type="text" class="validate">
+                                    <label for="product_img">Link product picture</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea name="productDescription" id="product_description" type="text" class="materialize-textarea"></textarea>
+                                    <label for="product_description">Product description</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type=submit name="btn-add-product" class="modal-action modal-close waves-effect waves-green btn-flat green darken-3 white-text">add</button>
+                        </div>
+                    </form>
+                </div>
+            {% endif %}
+            <!-- end add product -->
+
+            <!-- add cate -->
+            {% if curentParam == 'Category' %}
+            <button data-target="modal-add-cate" class="btn modal-trigger green darken-4 white-text btn-max-width">Add category</button>
+
+            <!-- Modal Structure -->
+            <div id="modal-add-cate" class="modal">
+                <form method="post">
+                    <div class="modal-content">
+                        <h4>Add new category</h4>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input name="cateName" id="cate_name" type="text" class="validate">
+                                <label for="cate_name">Product name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type=submit name="btn-add-cate" class="modal-action modal-close waves-effect waves-green btn-flat green darken-3 white-text">add</button>
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+            <!-- end add cate -->
+
+            <!-- add rank -->
+            {% if curentParam == 'Rank' %}
+            <button data-target="modal-add-rank" class="btn modal-trigger green darken-4 white-text btn-max-width">Add rank</button>
+
+            <!-- Modal Structure -->
+            <div id="modal-add-rank" class="modal">
+                <form method="post">
+                    <div class="modal-content">
+                        <h4>Add new rank</h4>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input name="rankName" id="rankName" type="text" class="validate">
+                                <label for="rankName">Rank name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type=submit name="btn-add-rank" class="modal-action modal-close waves-effect waves-green btn-flat green darken-3 white-text">add</button>
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+            <!-- end add rank -->
+
+        </div>
+
+        <div class="col s12 m8">
+            {% if curentParam == 'Product' %}
+                <h3>Product</h3>
+                <hr>
+                <div class="row">
+                    <table class="striped">
+                        <thead>
+                        <tr>
+                            <th data-field="id">#</th>
+                            <th data-field="Name">Name</th>
+                            <th data-field="Quantity">Price</th>
+                            <th data-field="Price">Picture</th>
+                            <th data-field="Price">Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for item in items %}
+                        <tr>
+                            <td>{{item.ProductId}}</td>
+                            <td>{{item.ProductName}}</td>
+                            <td>{{item.Price}}€</td>
+                            <td><img src="{{item.Picture}}" alt="" class="circle img-list"></td>
+                            <td>
+                                <a href='update.php?id={{item.ProductId}}&type=product' class="btn btn-floating orange waves-effect darken-2">
+                                    <i class="material-icons">mode_edit</i>
+                                </a>
+                                <button onclick="delItemSite({{item.ProductId}});" class="btn btn-floating orange waves-effect darken-2">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+
+            {% if curentParam == 'User' %}
+            <h3>Users</h3>
+            <hr>
+            <div class="row">
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th data-field="id">#</th>
+                        <th data-field="Name">Name</th>
+                        <th data-field="Price">Price</th>
+                        <th data-field="Picture">Picture</th>
+                        <th data-field="Rank">Rank</th>
+                        <th data-field="Action">Action</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{item.Id}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.LastName}}</td>
+                        <td><img src="{{item.Img}}" alt="" class="circle img-list"></td>
+                        <td>{{item.RankId}}</td>
+                        <td>
+                            <a href='update.php?id={{item.Id}}&type=user' class="btn btn-floating orange waves-effect darken-2">
+                                <i class="material-icons">mode_edit</i>
+                            </a>
+                            <button onclick="delUserSite({{item.Id}});" class="btn btn-floating orange waves-effect darken-2">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            {% if curentParam == 'Category' %}
+            <h3>Category</h3>
+            <hr>
+            <div class="row">
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th data-field="id">#</th>
+                        <th data-field="Name">Name</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{item.Id}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>
+                            <a href='update.php?id={{item.Id}}&type=cate' class="btn btn-floating orange waves-effect darken-2">
+                                <i class="material-icons">mode_edit</i>
+                            </a>
+                            <button onclick="delCateSite({{item.Id}});" class="btn btn-floating orange waves-effect darken-2">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            {% if curentParam == 'Rank' %}
+            <h3>Rank</h3>
+            <hr>
+            <div class="row">
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th data-field="id">#</th>
+                        <th data-field="Name">Name</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{item.Id}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>
+                            <a href='update.php?id={{item.Id}}&type=rank' class="btn btn-floating orange waves-effect darken-2">
+                                <i class="material-icons">mode_edit</i>
+                            </a>
+                            <button onclick="delRankSite({{item.Id}});" class="btn btn-floating orange waves-effect darken-2">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

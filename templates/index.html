@@ -1,0 +1,56 @@
+<script type="text/javascript" src="js/js.js"></script>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="img/background1.jpg"/></div>
+</div>
+
+<div class="container">
+    {% if message != null %}
+        <div class="panel panel-warnning">
+                {{message}}
+        </div>
+    {% endif %}
+
+    <h3>Star product</h3>
+    <hr>
+    <div class="row">
+        {% for product in products %}
+        <div class="col s12 m3">
+            <div class="card large">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{{ product.Picture }}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">
+                        {{product.ProductName}}
+                        <i class="material-icons right">more_vert</i>
+                    </span>
+                </div>
+                <div class="card-action">
+                    <button class="btn btn-floating purple darken-4" onclick="orderProduct({{product.ProductId}});">
+                        <i class="fa fa-usd white-text" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-floating green darken-4" onclick="addBasket({{product.ProductId}});">
+                        <i class="fa fa-cart-plus white-text" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">
+                        {{prodORDERuct.ProductName}}
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <p>
+                        Type: {{product.CateName}}
+                    </p>
+                    <p>
+                        Price: {{product.Price}}€
+                    </p>
+                    <p>
+                        {{product.Description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

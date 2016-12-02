@@ -1,0 +1,129 @@
+.img-avatar-nav{
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    height: 40px !important;
+}
+
+.img-avatar-profile{
+    width: 150px !important;
+}
+
+.logo-nav{
+    height: 55px;
+}
+
+.btn-order-basket{
+    width: 100%;
+}
+
+.btn-max-width{
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Josefin Sans', sans-serif;*/
+    font-weight: 700;
+    color: purple;
+
+    /*font-family: 'Orbitron', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Permanent Marker', cursive;
+
+    font-family: 'Bangers', cursive;
+    *font-family: 'Luckiest Guy', cursive;
+
+    font-family: 'Chelsea Market', cursive;
+    -font-family: 'Bungee Shade', cursive;
+    font-family: 'Fruktur', cursive;
+    **font-family: 'Cabin Sketch', cursive;
+*/
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+}
+
+.nav-item{
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 20px;
+}
+
+.card-title{
+    //font-family: 'Indie Flower', cursive;
+    //font-family: 'Josefin Sans', sans-serif;
+    //font-family: 'Pacifico', cursive;
+    //font-family: 'Amatic SC', cursive;
+    font-weight: 400 !important;
+    color: orange !important;
+    //font-family: 'Wendy One', sans-serif;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.collection .collection-item.active {
+    background-color: #1B5E20 !important;
+    color: #eafaf9 !important;
+}
+
+.panel{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.panel-warnning{
+    background-color: #faebcc;
+    border: solid 1px orange;
+}
+
+.img-list{
+    height: 50px !important;
+    width: 50px !important;
+}
+
+.collection button.collection-item{
+    /*display: block;*/
+    transition: .25s;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    border: 0;
+    background: #fff !important;
+    width: 100%;
+    text-align: left;
+    padding-top: 11px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.collection button.collection-item:hover{
+    background-color: rgba(196, 125, 224, 0.53) !important;
+}
+
+.first-pan{
+    background: url("../img/background1.jpg") no-repeat;
+    height: 450px;
+    background-size: cover;
+    min-width: 100% !important;
+    min-height: 100%;
+}
+
+.my-nav{
+    opacity: 0.8;
+}
+
+.alerte-perso{
+    position: absolute;
+    top: 75px;
+    right: 15px;
+    background-color: white;
+    color: black;
+    padding: 8px;
+}
+
+.alerte-warning{
+    color: #ff9700;
+    border: solid 1px orange;
+    background-color: rgba(255, 165, 0, 0.23);
+}

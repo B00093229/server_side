@@ -1,0 +1,58 @@
+<script type="text/javascript" src="js/js.js"></script>
+<div class="container">
+    <h3>All product</h3>
+    <hr>
+    <nav>
+        <div class="nav-wrapper green lighten-3">
+            <form>
+                <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <div class="row">
+        {% for product in products %}
+        <div class="col s12 m4">
+            <div class="card large">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{{ product.Picture }}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">
+                        {{product.ProductName}}
+                        <i class="material-icons right">more_vert</i>
+                    </span>
+                    <p>{{product.Price}}€</p>
+                </div>
+                <div class="card-action">
+                    <button class="btn btn-floating purple darken-4" onclick="orderProduct({{product.ProductId}});">
+                        <i class="fa fa-usd white-text" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-floating green darken-4" onclick="addBasket({{product.ProductId}});">
+                        <i class="fa fa-cart-plus white-text" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">
+                        {{prodORDERuct.ProductName}}
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <p>
+                        Type: {{product.CateName}}
+                    </p>
+                    <p>
+                        Price: {{product.Price}}€
+                    </p>
+                    <p>
+                        {{product.Description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

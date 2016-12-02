@@ -1,0 +1,59 @@
+<script type="text/javascript" src="js/js.js"></script>
+<div class="container">
+    <h3>Basket Content</h3>
+    <hr>
+    <div class="row">
+        <div class="col s12 m8">
+            <table class="striped">
+                <thead>
+                <tr>
+                    <th data-field="id">#</th>
+                    <th data-field="Name">Name</th>
+                    <th data-field="Quantity">Quantity</th>
+                    <th data-field="Price">Price</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for product in basket.product %}
+                    <tr>
+                        <td>{{product.idProduct}}</td>
+                        <td>{{product.nameProduct}}</td>
+                        <td>{{product.qteProduct}}</td>
+                        <td>{{product.priceProduct}}€</td>
+                        <td>
+                            <button onclick="delItemBasket({{product.idProduct}});" class="btn btn-floating purple waves-effect darken-2">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col s12 m4">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title"><h5>Your basket</h5></span>
+
+                            <ul class="collection">
+                                <li class="collection-item">Quantity: <span class="secondary-content">{{basketQte}}</span></li>
+                                <li class="collection-item">Total price: <span class="secondary-content">{{basketPrice}}€</span></li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <form method="post">
+                                <button class="btn btn-flat waves-effect waves-light green darken-3 white-text btn-order-basket" type="submit" name="orderBasket">
+                                    <i class="material-icons right">send</i>
+                                    Order
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

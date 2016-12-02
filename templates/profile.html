@@ -1,0 +1,86 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col s4">
+            <div class="collection">
+                <div class="collection-item"><h4>Quick nav</h4></div>
+                <a href="#!" class="active collection-item orange-text">
+                    Profile
+                    <span class="secondary-content">
+                        <i class="material-icons orange-text">send</i>
+                    </span>
+                </a>
+                <a href="basket.php" class="collection-item orange-text">
+                    Basket
+                    <span class="secondary-content">
+                        <i class="material-icons orange-text">send</i>
+                    </span>
+                </a>
+                <a href="orderListe.php" class="collection-item orange-text">
+                    Orders
+                    <span class="secondary-content">
+                        <i class="material-icons orange-text">send</i>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col s12 m8">
+            <h3>Profile</h3>
+            <hr>
+            <div class="row">
+                <div class="col s12 m4">
+                    <img class="img-avatar-profile circle center-block" src="{{profile.ImgUser}}">
+                </div>
+                <div class="col s12 l8 profile-detail">
+                    <table class="bordered">
+                        <tbody>
+                        <tr>
+                            <td><label>Name</label></td>
+                            <td>{{profile.NameUser}} {{profile.LastNameUser}}</td>
+                        </tr>
+                        <tr>
+                            <td><label>Email</label></td>
+                            <td>{{profile.EmailUser}}</td>
+                        </tr>
+                        <tr>
+                            <td><label>Address</label></td>
+                            <td>{{profile.AddressUser}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <h3>Update profile</h3>
+            <hr>
+            <div class="row">
+                <form class="col s12" method="post">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first_name" type="text" class="validate" name="firstName">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate" name="lastName">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate" name="email">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="address" type="text" class="validate" name="address">
+                            <label for="address">Address</label>
+                        </div>
+                    </div>
+                    <button class="btn right orange white-text waves-effect waves-light" type="submit" name="submit" value="Submit">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

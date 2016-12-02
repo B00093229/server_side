@@ -1,0 +1,34 @@
+<div class="container">
+    <h3>Update {{type}} - {{id}}</h3>
+    <hr>
+    <div class="row">
+        <form class="col s12" method="post">
+
+            {% if type == 'product' %}
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="first_name" type="text" class="validate" name="prodName" value="{{item.ProductName}}">
+                    <label for="first_name">Product Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="last_name" type="number" class="validate" name="prodPrice" value="{{item.Price}}">
+                    <label for="last_name">Product Price</label>
+                </div>
+
+                <div class="input-field col s4">
+                    <input name="productStar" type="checkbox" id="test5"/>
+                    <label for="test5">Is star</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="productImg" id="product_img" type="text" class="validate" value="{{item.Picture}}">
+                    <label for="product_img">Link product picture</label>
+                </div>
+            </div>
+
+            <button class="btn right orange white-text waves-effect waves-light" type="submit" name="updateProduct">Update</button>
+            {% endif %}
+        </form>
+    </div>
+</div>

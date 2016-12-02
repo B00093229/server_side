@@ -1,0 +1,29 @@
+<div class="container">
+    <h3>Order List</h3>
+    <hr>
+    <div class="row">
+        <div class="col s12 m8">
+            <table class="striped">
+                <thead>
+                <tr>
+                    <th data-field="id">#</th>
+                    <th data-field="Name">Name</th>
+                    <th data-field="Quantity">Price</th>
+                    <th data-field="Price">Date</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{order.idOrd}}</td>
+                    <td>{{order.nameProd}}</td>
+                    <td>{{order.priceProd}}€</td>
+                    <td>{{order.dateOrd}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

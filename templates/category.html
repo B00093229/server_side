@@ -1,0 +1,74 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m3">
+            <form method="post">
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            Category:
+                        </label>
+                        <select class="browser-default" name="selectCategory">
+                            <option value="" disabled selected>Choose your option</option>
+                            {% for cate in categorys %}
+                                <option value="{{cate.Id}}">{{cate.Name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-flat green darken-4 white-text btn-max-width" type="submit" name="filterCategory">
+                    <i class="material-icons right">send</i>
+                    Go !
+                </button>
+            </form>
+        </div>
+
+        <div class="col s12 m9">
+            <h3>{{currentCategory.Name}}</h3>
+            <hr>
+            <div class="row">
+
+                {% for product in products %}
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="{{ product.Picture }}">
+                        </div>
+                        <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">
+                    {{product.Name}}
+                    <i class="material-icons right">more_vert</i>
+                </span>
+                            <p>{{product.Price}}€</p>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn white grey-text text-darken-4" onclick="orderProduct({{product.Id}});">
+                                Order
+                            </button>
+                            <button class="btn white grey-text text-darken-4 test" onclick="addBasket({{product.Id}});">
+                                Add basket
+                            </button>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">
+                                {{product.Name}}
+                                <i class="material-icons right">close</i>
+                            </span>
+                            <p>
+                                Type: {{currentCategory.Name}}
+                            </p>
+                            <p>
+                                Price: {{product.Price}}€
+                            </p>
+                            <p>
+                                {{product.Description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
