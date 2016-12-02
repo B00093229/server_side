@@ -272,4 +272,29 @@ class bdd
             return false;
         }
     }
+
+    public function getUserById($id){
+        $query = 'SELECT usr.Id, usr.Name, usr.Img, usr.Address, usr.LastName AS "usrLastName", usr.Email, usr.RankId, rk.Name AS "RankName" 
+                  FROM User usr INNER JOIN Rank rk 
+                  ON usr.RankId = rk.Id
+                  WHERE usr.Id = :id';
+        $sql = $this->PDOInstance->prepare($query);
+        $sql->execute(array(':id'=>$id));
+        $usr = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $usr;
+    }
+
+    public function updateUserProfileAdm($name, $lastName, $address, $img, $rank, $mail, $id){
+        $query = 'UPDATE User
+                  SET Name=:name, LastName=:lastname, Email=:email, Address=:address, Img=:img, RankId=:rankId
+                  WHERE Id = :id;';
+        $sql = $this->PDOInstance->prepare($query);
+        $sql->execute(array(':id'=>$id, ':name'=>$name, ':lastname'=>$lastName, ':email'=>$mail, ':address'=>$address, ':img'=>$img, ':rankId'=>$rank));
+        if($sql->rowCount() >= 1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
