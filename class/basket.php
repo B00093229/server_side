@@ -1,14 +1,10 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: cyril
- * Date: 19/10/16
- * Time: 13:25
- */
-
 class basket
 {
+    /**
+     * basket constructor.
+     */
     function __construct(){
         if (!isset($_SESSION['basket'])) {
             $_SESSION['basket'] = array();
@@ -61,10 +57,18 @@ class basket
         }
     }
 
+    /**
+     * This function return the basket stored in the session
+     * @return mixed
+     */
     public function getBasket(){
         return $_SESSION['basket'];
     }
 
+    /**
+     * This function return the total price of the basket stored in the session
+     * @return int price total of the basket
+     */
     public function getPriceBasket(){
         if (isset($_SESSION['basket']))
         {
@@ -76,6 +80,10 @@ class basket
         }
     }
 
+    /**
+     * this function return the number of element present in the basket stored in the session
+     * @return int the number of element in the basket
+     */
     public function getNbElementBasket(){
         if (isset($_SESSION['basket']))
         {
@@ -83,6 +91,13 @@ class basket
         }
     }
 
+    /**
+     * This function add new product in the basket stored in the session
+     * @param $name name of product
+     * @param $qte qte of this product
+     * @param $price prie of product
+     * @param $id id of product
+     */
     public function ajouterArticle($name,$qte,$price, $id){
 
         //Si le panier existe
@@ -118,6 +133,10 @@ class basket
         }
     }
 
+    /**
+     * This function delete an article in the basket stored in the session
+     * @param $idProduct id of user
+     */
     public function deleteArticle($idProduct){
         if(isset($_SESSION['basket']) && $_SESSION['basket']['lock'] == false ){
             for($i=0; $i < sizeof($_SESSION['basket']['product']); $i++){
@@ -129,6 +148,9 @@ class basket
         }
     }
 
+    /**
+     * this function lock the basket stored in the session
+     */
     public function lockBasket(){
         if(isset($_SESSION['basket'])){
             if($_SESSION['basket']['lock'] == false){
@@ -137,6 +159,9 @@ class basket
         }
     }
 
+    /**
+     * This function unlock the basket stored in the session
+     */
     public function unlockBasket(){
         if(isset($_SESSION['basket'])){
             if($_SESSION['basket']['lock'] == true){
